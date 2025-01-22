@@ -1,0 +1,4 @@
+ID,Operator,Nama,Dusun,NIK,jk,status_keluarga,status_sekolah,status_pekerjaan,agama,warga_negara,tgl_lahir
+1,Ansar,Suardi,BATUPIAK,1234567890123456,L,KepalaKeluarga,TK/PAUD,BELUM/TIDAKBEKERJA,Islam,Indonesia,2024-12-24
+2,Ansar,Anti,LIBA,1234567890123452,P,Istri,BelumSekolah,MENGURUSRUMAHTANGGA,Islam,Indonesia,2024-12-10
+3,Ansar,"Resky Aulia",LIBA,1234567890123451,P,Istri,DIV/S1,PNS,Islam,Indonesia,2024-12-24
