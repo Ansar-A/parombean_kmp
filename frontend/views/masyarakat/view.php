@@ -56,8 +56,13 @@ $this->params['breadcrumbs'][] = $this->title;
             'status_pekerjaan',
             'agama',
             'warga_negara',
-            'tgl_lahir',
-            'penerima_raskin',
+            [
+                'label' => 'Tempat, Tanggal Lahir', // Label kolom
+                'format' => 'raw',
+                'value' => function ($model) {
+                    return $model->tempat_lahir . ', ' . Yii::$app->formatter->asDate($model->tgl_lahir, 'php:d F Y');
+                },
+            ],            'penerima_raskin',
             'penerima_BPJS'
         ],
     ]) ?>

@@ -38,11 +38,11 @@ class Masyarakat extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['get_user', 'nama', 'dusun', 'NIK', 'jk', 'status_keluarga', 'status_sekolah', 'status_pekerjaan', 'agama', 'warga_negara', 'tgl_lahir', 'penerima_raskin', 'penerima_BPJS'], 'required'],
+            [['get_user', 'nama', 'dusun', 'NIK', 'jk', 'status_keluarga', 'status_sekolah', 'status_pekerjaan', 'agama', 'warga_negara', 'tgl_lahir', 'penerima_raskin', 'penerima_BPJS', 'tempat_lahir'], 'required'],
             [['get_user'], 'integer'],
             [['dusun', 'jk', 'status_keluarga', 'status_sekolah', 'status_pekerjaan', 'agama', 'warga_negara'], 'string'],
             [['tgl_lahir'], 'safe'],
-            [['nama'], 'string', 'max' => 100],
+            [['nama', 'tempat_lahir'], 'string', 'max' => 100],
             [['NIK'], 'string', 'max' => 16],
             [['NIK'], 'unique', 'message' => 'NIK sudah terdaftar'],  
             [['penerima_raskin', 'penerima_BPJS'], 'in', 'range' => ['Ya', 'Tidak']],
@@ -85,6 +85,7 @@ class Masyarakat extends \yii\db\ActiveRecord
             'tgl_lahir' => 'Tgl Lahir',
             'penerima_raskin' => 'Penerima Raskin',
             'penerima_BPJS' => 'Penerima BPJS',
+            'tempat_lahir' => 'Tempat Lahir',
         ];
     }
     public function beforeSave($insert)

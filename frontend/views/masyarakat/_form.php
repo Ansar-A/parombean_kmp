@@ -6,8 +6,14 @@ use common\models\Masyarakat;
 /** @var yii\web\View $this */
 /** @var common\models\Masyarakat $model */
 /** @var yii\widgets\ActiveForm $form */
+use yii\jui\DatePicker;
 
 ?>
+<style>
+    .ui-datepicker {
+    z-index: 1051 !important; /* Pastikan ini lebih tinggi dari z-index modal */
+}
+</style>
 
 <div class="masyarakat-form">
 <div class="card card-dashboard-five">
@@ -29,6 +35,25 @@ use common\models\Masyarakat;
     <div class="row mb-4">
         <div class="col-md-6">
             <?= $form->field($model, 'nama')->textInput(['maxlength' => true]) ?>
+        </div>
+        <div class="col-md-6">
+            <div class="row">
+                <div class="col-md-6">
+                    <?= $form->field($model, 'tempat_lahir')->textInput(['maxlength' => true]) ?>
+                </div>
+                <div class="col-md-6">
+                    <?= $form->field($model, 'tgl_lahir')->widget(DatePicker::class, [
+                        'dateFormat' => 'php:Y-m-d', // Format tanggal
+                        'options' => ['class' => 'form-control'], // Tambahan opsi CSS
+                        'clientOptions' => [
+                            'changeMonth' => true,
+                            'changeYear' => true,
+                            'yearRange' => '1900:' . date('Y'), // Rentang tahun
+                        ],
+                    ]) ?>
+                </div>
+            </div>
+            
         </div>
         <div class="col-md-6">
              <?= $form->field($model, 'dusun')->dropDownList(
@@ -57,9 +82,7 @@ use common\models\Masyarakat;
          <div class="col-md-6">
              <?= $form->field($model, 'warga_negara')->dropDownList([ 'Indonesia' => 'Indonesia', ]) ?>
         </div>
-         <div class="col-md-6">
-            <?= $form->field($model, 'tgl_lahir')->textInput(['type'=>'date']) ?>
-        </div>
+         
 
         <div class="col-md-6">
     <?= $form->field($model, 'penerima_raskin')->radioList(['Ya' => 'Ya', 'Tidak' => 'Tidak'], [

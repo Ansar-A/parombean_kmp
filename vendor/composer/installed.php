@@ -46,6 +46,15 @@
             'aliases' => array(),
             'dev_requirement' => false,
         ),
+        'bower-asset/jquery-ui' => array(
+            'pretty_version' => '1.12.1',
+            'version' => '1.12.1.0',
+            'reference' => '44ecf3794cc56b65954cc19737234a3119d036cc',
+            'type' => 'bower-asset',
+            'install_path' => __DIR__ . '/../bower-asset/jquery-ui',
+            'aliases' => array(),
+            'dev_requirement' => false,
+        ),
         'bower-asset/punycode' => array(
             'pretty_version' => 'v2.3.1',
             'version' => '2.3.1.0',
@@ -927,6 +936,15 @@
             'install_path' => __DIR__ . '/../yiisoft/yii2-gii',
             'aliases' => array(),
             'dev_requirement' => true,
+        ),
+        'yiisoft/yii2-jui' => array(
+            'pretty_version' => '2.0.7',
+            'version' => '2.0.7.0',
+            'reference' => 'ce45c16d4fbbe7d1c516d8d0e8311e07f6138eed',
+            'type' => 'yii2-extension',
+            'install_path' => __DIR__ . '/../yiisoft/yii2-jui',
+            'aliases' => array(),
+            'dev_requirement' => false,
         ),
         'yiisoft/yii2-swiftmailer' => array(
             'pretty_version' => '2.1.3',
